@@ -7,6 +7,7 @@ def model():
     return loaded_model
 
 def get_prediction(model, input_dict):
+<<<<<<< HEAD
     model= model()
     numeric_input = {k: float(v) for k, v in input_dict.items() if isinstance(v, (int, float)) or v.isnumeric()}
 
@@ -18,3 +19,6 @@ def get_prediction(model, input_dict):
     prediction_label = labels[prediction[0]]
 
     return prediction_label
+=======
+    return "Positive"
+>>>>>>> a3dcbd3301372b748282c57d1a09f0b5d13de061
