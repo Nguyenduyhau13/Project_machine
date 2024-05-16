@@ -3,7 +3,7 @@ import numpy as np
 
 def model():
     # Load the trained model
-    loaded_model = joblib.load('D:\MC\Project_machine\knn.pkl')
+    loaded_model = joblib.load('app\\training\KNN.pkl')
     return loaded_model
 
 def get_prediction(model, input_dict):

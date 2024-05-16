@@ -3,6 +3,11 @@
 <form action="predict" method="post">
 {% csrf_token %}
 
+<label for="diagnosis">diagnosis</label>
+<input id="diagnosis" name="diagnosis" type="number"
+{% if diagnosis %}value="{{diagnosis}}"{% endif %}
+/>
+
 <label for="radius_mean">radius_mean</label>
 <input id="radius_mean" name="radius_mean" type="number"
 {% if radius_mean %}value="{{radius_mean}}"{% endif %}
