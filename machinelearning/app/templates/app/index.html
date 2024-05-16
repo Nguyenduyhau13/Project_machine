@@ -1,92 +1,195 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Chương trình học máy chẩn đoán ung thư vú</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-        <script src="" async defer></script>
-        <h1>Chương trình học máy chẩn đoán ung thư vú</h1>
-        <br>
-            <label for="diagnosis">diagnosis</label>
-            <input name="diagnosis" id="diagnosis" type="number"/>
-            <input type="submit" value="Submit"/>
-        <br/>
+{% include 'app/header.html' %}
+<h2>{{status}}</h2>
+<form action="predict" method="post">
+{% csrf_token %}
+<label for="diagnosis">diagnosis</label>
+<input id="diagnosis" name="diagnosis" type="number"
+{% if diagnosis %}value="{{diagnosis}}"{% endif %}
+/>
+<br/>
 
-        <br>
-            <label for="radius_mean">radius mean</label>
-            <input name="radius_mean" id="radius_mean" type="number" step="0.01"/>
-            <input type="submit" value="Submit"/>
-        <br/>
+<label for="radius_mean">radius_mean</label>
+<input id="radius_mean" name="radius_mean" type="number"
+{% if radius_mean %}value="{{radius_mean}}"{% endif %}
+/>
+<br/>
 
-        <br>
-            <label for="texture_mean">texture mean</label>
-            <input name="texture_mean" id="texture_mean" type="number" step="0.01"/>
-            <input type="submit" value="Submit"/>
-        <br/>
+<label for="texture_mean">texture_mean</label>
+<input id="texture_mean" name="texture_mean" type="number"
+{% if texture_mean %}value="{{texture_mean}}"{% endif %}
+/>
+<br/>
 
-        <br>
-            <label for="perimeter_mean">perimeter mean</label>
-            <input name="perimeter_mean" id="perimeter_mean" type="number" step="0.01"/>
-            <input type="submit" value="Submit"/>
-        <br/>
+<label for="perimeter_mean">Sperimeter_mean</label>
+<input id="perimeter_mean" name="perimeter_mean" type="number"
+{% if perimeter_mean %}value="{{perimeter_mean}}"{% endif %}
+/>
+<br/>
 
-        <br>
-            <label for="area_mean">area mean</label>
-            <input name="area_mean" id="area_mean" type="number" step="0.1"/>
-            <input type="submit" value="Submit"/>
-        <br/>
+<label for="area_mean">area_mean</label>
+<input id="area_mean" name="area_mean" type="number"
+{% if area_mean %}value="{{area_mean}}"{% endif %}
+/>
+<br/>
 
-        <br>
-            <label for="smoothness_mean">smoothness mean</label>
-            <input name="smoothness_mean" id="smoothness_mean" type="number" step="0.00001"/>
-            <input type="submit" value="Submit"/>
-        <br/>
+<label for="smoothness_mean">smoothness_mean</label>
+<input id="smoothness_mean" name="smoothness_mean" type="number" step="0.1"
+{% if smoothness_mean %}value="{{smoothness_mean}}"{% endif %}
+/>
+<br/>
 
-        <br>
-            <label for="diagnosis">diagnosis</label>
-            <input name="diagnosis" id="diagnosis" type="number"/>
-            <input type="submit" value="Submit"/>
-        <br/>
+<label for="compactness_mean">compactness_mean</label>
+<input id="compactness_mean" name="compactness_mean" type="number" step="0.001"
+{% if compactness_mean %}value="{{compactness_mean}}"{% endif %}
+/>
+<br/>
 
-        <br>
-            <label for="diagnosis">diagnosis</label>
-            <input name="diagnosis" id="diagnosis" type="number"/>
-            <input type="submit" value="Submit"/>
-        <br/>
+<label for="concavity_mean">concavity_mean</label>
+<input id="concavity_mean" name="concavity_mean" type="number"
+{% if concavity_mean %}value="{{concavity_mean}}"{% endif %}
+/>
+<br/>
 
-        <br>
-            <label for="diagnosis">diagnosis</label>
-            <input name="diagnosis" id="diagnosis" type="number"/>
-            <input type="submit" value="Submit"/>
-        <br/>
+<label for="concave_points_mean">concave_points_mean</label>
+<input id="concave_points_mean" name="concave_points_mean" type="number"
+{% if concave_points_mean %}value="{{concave_points_mean}}"{% endif %}
+/>
+<br/>
 
-        <br>
-            <label for="diagnosis">diagnosis</label>
-            <input name="diagnosis" id="diagnosis" type="number"/>
-            <input type="submit" value="Submit"/>
-        <br/>
+<label for="symmetry_mean">symmetry_mean</label>
+<input id="symmetry_mean" name="symmetry_mean" type="number"
+{% if symmetry_mean %}value="{{symmetry_mean}}"{% endif %}
+/>
+<br/>
 
-        <br>
-            <label for="diagnosis">diagnosis</label>
-            <input name="diagnosis" id="diagnosis" type="number"/>
-            <input type="submit" value="Submit"/>
-        <br/>
+<label for="fractal_dimension_mean">fractal_dimension_mean</label>
+<input id="fractal_dimension_mean" name="fractal_dimension_mean" type="number"
+{% if fractal_dimension_mean %}value="{{fractal_dimension_mean}}"{% endif %}
+/>
+<br/>
 
-        <br>
-            <label for="diagnosis">diagnosis</label>
-            <input name="diagnosis" id="diagnosis" type="number"/>
-            <input type="submit" value="Submit"/>
-        <br/>
+<label for="radius_se">radius_se</label>
+<input id="radius_se" name="radius_se" type="number"
+{% if radius_se %}value="{{radius_se}}"{% endif %}
+/>
+<br/>
 
-        <br>
-            <label for="diagnosis">diagnosis</label>
-            <input name="diagnosis" id="diagnosis" type="number"/>
-            <input type="submit" value="Submit"/>
-        <br/>
-    </body>
-</html>
+<label for="texture_se">texture_se</label>
+<input id="texture_se" name="texture_se" type="number"
+{% if texture_se %}value="{{texture_se}}"{% endif %}
+/>
+<br/>
+
+<label for="perimeter_se">perimeter_se</label>
+<input id="perimeter_se" name="perimeter_se" type="number"
+{% if perimeter_se %}value="{{perimeter_se}}"{% endif %}
+/>
+<br/>
+
+<label for="area_se">area_se</label>
+<input id="area_se" name="area_se" type="number"
+{% if area_se %}value="{{area_se}}"{% endif %}
+/>
+<br/>
+
+<label for="smoothness_se">smoothness_se</label>
+<input id="smoothness_se" name="smoothness_se" type="number"
+{% if smoothness_se %}value="{{smoothness_se}}"{% endif %}
+/>
+<br/>
+
+<label for="compactness_se">compactness_se</label>
+<input id="compactness_se" name="compactness_se" type="number"
+{% if compactness_se %}value="{{compactness_se}}"{% endif %}
+/>
+<br/>
+
+
+<label for="concavity_se">concavity_se</label>
+<input id="concavity_se" name="concavity_se" type="number"
+{% if concavity_se %}value="{{concavity_se}}"{% endif %}
+/>
+<br/>
+
+<label for="concave_points_se">concave_points_se</label>
+<input id="concave_points_se" name="concave_points_se" type="number"
+{% if concave_points_se %}value="{{concave_points_se}}"{% endif %}
+/>
+<br/>
+
+<label for="symmetry_se">symmetry_se</label>
+<input id="symmetry_se" name="symmetry_se" type="number"
+{% if symmetry_se %}value="{{symmetry_se}}"{% endif %}
+/>
+<br/>
+
+<label for="fractal_dimension_se">fractal_dimension_se</label>
+<input id="fractal_dimension_se" name="fractal_dimension_se" type="number"
+{% if fractal_dimension_se %}value="{{fractal_dimension_se}}"{% endif %}
+/>
+<br/>
+
+<label for="radius_worst">radius_worst</label>
+<input id="radius_worst" name="radius_worst" type="number"
+{% if radius_worst %}value="{{radius_worst}}"{% endif %}
+/>
+<br/>
+
+<label for="texture_worst">texture_worst</label>
+<input id="texture_worst" name="texture_worst" type="number"
+{% if texture_worst %}value="{{texture_worst}}"{% endif %}
+/>
+<br/>
+
+<label for="perimeter_worst">perimeter_worst</label>
+<input id="perimeter_worst" name="perimeter_worst" type="number"
+{% if perimeter_worst %}value="{{perimeter_worst}}"{% endif %}
+/>
+<br/>
+
+<label for="area_worst">area_worst</label>
+<input id="area_worst" name="area_worst" type="number"
+{% if area_worst %}value="{{area_worst}}"{% endif %}
+/>
+<br/>
+
+<label for="smoothness_worst">smoothness_worst</label>
+<input id="smoothness_worst" name="smoothness_worst" type="number"
+{% if smoothness_worst %}value="{{smoothness_worst}}"{% endif %}
+/>
+<br/>
+
+<label for="compactness_worst">compactness_worst</label>
+<input id="compactness_worst" name="compactness_worst" type="number"
+{% if compactness_worst %}value="{{compactness_worst}}"{% endif %}
+/>
+<br/>
+
+
+<label for="concavity_worst">concavity_worst</label>
+<input id="concavity_worst" name="concavity_worst" type="number"
+{% if concavity_worst %}value="{{concavity_worst}}"{% endif %}
+/>
+<br/>
+
+<label for="concave_points_worst">concave_points_worst</label>
+<input id="concave_points_worst" name="concave_points_worst" type="number"
+{% if concave_points_worst %}value="{{concave_points_worst}}"{% endif %}
+/>
+<br/>
+
+<label for="symmetry_worst">symmetry_worst</label>
+<input id="symmetry_worst" name="symmetry_worst" type="number"
+{% if symmetry_worst %}value="{{symmetry_worst}}"{% endif %}
+/>
+<br/>
+
+<label for="fractal_dimension_worst">fractal_dimension_worst</label>
+<input id="fractal_dimension_worst" name="fractal_dimension_worst" type="number"
+{% if fractal_dimension_worst %}value="{{fractal_dimension_worst}}"{% endif %}
+/>
+<br/>
+
+<input type="submit" value="Submit test results"/>
+</form>
+{% include 'app/footer.html' %}
