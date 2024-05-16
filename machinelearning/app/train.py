@@ -17,4 +17,4 @@ def get_prediction(model, input_dict):
     labels = {0: "lành tính", 1: "ác tính"}
     prediction_label = labels[prediction[0]]
 
-    return prediction_labe
+    return prediction_label
