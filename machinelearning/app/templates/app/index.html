@@ -3,144 +3,144 @@
 <form action="predict" method="post">
 {% csrf_token %}
 
-<label for="radius_mean">radius_mean</label>
+<label for="radius_mean">Radius Mean</label>
 <input id="radius_mean" name="radius_mean" type="number" step="any"
 {% if radius_mean %}value="{{radius_mean}}"{% endif %}
 />
 
-<label for="texture_mean">texture_mean</label>
+<label for="texture_mean">Texture Mean</label>
 <input id="texture_mean" name="texture_mean" type="number" step="any"
 {% if texture_mean %}value="{{texture_mean}}"{% endif %}
 />
 
-<label for="perimeter_mean">Sperimeter_mean</label>
+<label for="perimeter_mean">Perimeter Mean</label>
 <input id="perimeter_mean" name="perimeter_mean" type="number" step="any"
 {% if perimeter_mean %}value="{{perimeter_mean}}"{% endif %}
 />
 </br>
-<label for="area_mean">area_mean</label>
+<label for="area_mean">Area Mean</label>
 <input id="area_mean" name="area_mean" type="number" step="any"
 {% if area_mean %}value="{{area_mean}}"{% endif %}
 />
 
-<label for="smoothness_mean">smoothness_mean</label>
+<label for="smoothness_mean">Smoothness Mean</label>
 <input id="smoothness_mean" name="smoothness_mean" type="number" step="any"
 {% if smoothness_mean %}value="{{smoothness_mean}}"{% endif %}
 />
 
-<label for="compactness_mean">compactness_mean</label>
+<label for="compactness_mean">Compactness Mean</label>
 <input id="compactness_mean" name="compactness_mean" type="number" step="any"
 {% if compactness_mean %}value="{{compactness_mean}}"{% endif %}
 />
 
-<label for="concavity_mean">concavity_mean</label>
+<label for="concavity_mean">Concavity Mean</label>
 <input id="concavity_mean" name="concavity_mean" type="number" step="any"
 {% if concavity_mean %}value="{{concavity_mean}}"{% endif %}
 />
 <br/>
 
-<label for="concave_points_mean">concave_points_mean</label>
+<label for="concave_points_mean">Concave Points Mean</label>
 <input id="concave_points_mean" name="concave_points_mean" type="number" step="any"
 {% if concave_points_mean %}value="{{concave_points_mean}}"{% endif %}
 />
 
-<label for="symmetry_mean">symmetry_mean</label>
+<label for="symmetry_mean">Symmetry Mean</label>
 <input id="symmetry_mean" name="symmetry_mean" type="number" step="any"
 {% if symmetry_mean %}value="{{symmetry_mean}}"{% endif %}
 />
 
-<label for="fractal_dimension_mean">fractal_dimension_mean</label>
+<label for="fractal_dimension_mean">Fractal Dimension Mean</label>
 <input id="fractal_dimension_mean" name="fractal_dimension_mean" type="number" step="any"
 {% if fractal_dimension_mean %}value="{{fractal_dimension_mean}}"{% endif %}
 />
 
-<label for="radius_se">radius_se</label>
+<label for="radius_se">Radius Se</label>
 <input id="radius_se" name="radius_se" type="number" step="any"
 {% if radius_se %}value="{{radius_se}}"{% endif %}
 />
 <br/>
 
-<label for="texture_se">texture_se</label>
+<label for="texture_se">Texture Se</label>
 <input id="texture_se" name="texture_se" type="number" step="any"
 {% if texture_se %}value="{{texture_se}}"{% endif %}
 />
 
-<label for="perimeter_se">perimeter_se</label>
+<label for="perimeter_se">Perimeter Se</label>
 <input id="perimeter_se" name="perimeter_se" type="number" step="any"
 {% if perimeter_se %}value="{{perimeter_se}}"{% endif %}
 />
 
-<label for="area_se">area_se</label>
+<label for="area_se">Area Se</label>
 <input id="area_se" name="area_se" type="number" step="any"
 {% if area_se %}value="{{area_se}}"{% endif %}
 />
 
-<label for="smoothness_se">smoothness_se</label>
+<label for="smoothness_se">Smoothness Se</label>
 <input id="smoothness_se" name="smoothness_se" type="number" step="any"
 {% if smoothness_se %}value="{{smoothness_se}}"{% endif %}
 />
 <br/>
 
-<label for="compactness_se">compactness_se</label>
+<label for="compactness_se">Compactness Se</label>
 <input id="compactness_se" name="compactness_se" type="number" step="any"
 {% if compactness_se %}value="{{compactness_se}}"{% endif %}
 />
 
 
-<label for="concavity_se">concavity_se</label>
+<label for="concavity_se">Concavity Se</label>
 <input id="concavity_se" name="concavity_se" type="number" step="any"
 {% if concavity_se %}value="{{concavity_se}}"{% endif %}
 />
 
-<label for="concave_points_se">concave_points_se</label>
+<label for="concave_points_se">Concave Points Se</label>
 <input id="concave_points_se" name="concave_points_se" type="number" step="any"
 {% if concave_points_se %}value="{{concave_points_se}}"{% endif %}
 />
 
-<label for="symmetry_se">symmetry_se</label>
+<label for="symmetry_se">Symmetry Se</label>
 <input id="symmetry_se" name="symmetry_se" type="number" step="any"
 {% if symmetry_se %}value="{{symmetry_se}}"{% endif %}
 />
 <br/>
 
-<label for="fractal_dimension_se">fractal_dimension_se</label>
+<label for="fractal_dimension_se">Fractal Dimension_se</label>
 <input id="fractal_dimension_se" name="fractal_dimension_se" type="number" step="any"
 {% if fractal_dimension_se %}value="{{fractal_dimension_se}}"{% endif %}
 />
 
-<label for="radius_worst">radius_worst</label>
+<label for="radius_worst">Radius Worst</label>
 <input id="radius_worst" name="radius_worst" type="number" step="any"
 {% if radius_worst %}value="{{radius_worst}}"{% endif %}
 />
 
-<label for="texture_worst">texture_worst</label>
+<label for="texture_worst">Texture Worst</label>
 <input id="texture_worst" name="texture_worst" type="number" step="any"
 {% if texture_worst %}value="{{texture_worst}}"{% endif %}
 />
 
-<label for="perimeter_worst">perimeter_worst</label>
+<label for="perimeter_worst">Perimeter Worst</label>
 <input id="perimeter_worst" name="perimeter_worst" type="number" step="any"
 {% if perimeter_worst %}value="{{perimeter_worst}}"{% endif %}
 />
 <br/>
 
-<label for="area_worst">area_worst</label>
+<label for="area_worst">Area Worst</label>
 <input id="area_worst" name="area_worst" type="number" step="any"
 {% if area_worst %}value="{{area_worst}}"{% endif %}
 />
 
-<label for="smoothness_worst">smoothness_worst</label>
+<label for="smoothness_worst">Smoothness Worst</label>
 <input id="smoothness_worst" name="smoothness_worst" type="number" step="any"
 {% if smoothness_worst %}value="{{smoothness_worst}}"{% endif %}
 />
 
-<label for="compactness_worst">compactness_worst</label>
+<label for="compactness_worst">Compactness Worst</label>
 <input id="compactness_worst" name="compactness_worst" type="number" step="any"
 {% if compactness_worst %}value="{{compactness_worst}}"{% endif %}
 />
 
 
-<label for="concavity_worst">concavity_worst</label>
+<label for="concavity_worst">Concavity Worst</label>
 <input id="concavity_worst" name="concavity_worst" type="number" step="any"
 {% if concavity_worst %}value="{{concavity_worst}}"{% endif %}
 />
